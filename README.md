@@ -6,8 +6,8 @@
 输入：HTML/txt
 输出：excel
 
-#### 软件架构
-软件架构说明
+#### Timetable
+https://www.jianshu.com/p/0c576ec144c5
 
 
 #### 安装教程

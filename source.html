@@ -1,0 +1,622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0063)https://bkzhjx.wh.sdu.edu.cn/jsxsd/xsxkjg/comeXkjglb?isktx=true -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--<base target="_self">--><base href="." target="_self">
+		<title>学生选课中心</title>
+		<link href="./学生选课中心_files/common.css" rel="stylesheet" type="text/css">
+		<link href="./学生选课中心_files/workstation.css" rel="stylesheet" type="text/css">
+		<link href="./学生选课中心_files/demo_page.css" rel="stylesheet" type="text/css">
+		<link href="./学生选课中心_files/demo_table.css" rel="stylesheet" type="text/css"> 
+		
+		<script type="text/javascript" src="./学生选课中心_files/jquery-min.js.下载" language="javascript"></script>
+		<script type="text/javascript" src="./学生选课中心_files/common.js.下载" language="javascript"></script>
+		<script type="text/javascript" src="./学生选课中心_files/iepngfix_tilebg.js.下载" language="javascript"></script>
+		<script type="text/javascript" src="./学生选课中心_files/jquery.dataTables.min.js.下载"></script><style></style>
+		
+		<script type="text/javascript">
+			//学 生选课操作
+			function xstkOper(jx0404id){
+				if(!window.confirm("提示：你确认退选当前选课？")){
+					return;
+				}
+				$("#div_"+jx0404id).hide();
+				var rev = eval('(' + $.ajax({
+					url:"/jsxsd/xsxkjg/xstkOper",
+					data:{
+						jx0404id:jx0404id
+					},
+					async:false
+				}).responseText + ')');
+		
+				if(rev.success){
+					alert("退课成功！");
+					window.opener.parent.document.getElementById("selectTable").src = "/jsxsd/xsxk/selectTable";
+					window.location.reload();
+				}else{	
+					$("#div_"+jx0404id).show();
+					alert(rev.message);
+				}
+			}
+			function ydjcOper(jx0404id){
+				var url = "/jsxsd/xsxkjg/xsxk_ydjc?sfsx=1&jx0404id="+jx0404id;
+				window.open (url,"newwindow","height=350,width=550,top=250,left=500,toolbar=no,menubar=no,location=no, status=no");
+			}
+			function cqOper(jx0404id,cqqk){
+				$("#div_"+jx0404id).hide();
+				var rev = eval('(' + $.ajax({
+					url:"/jsxsd/xsxkjg/xscqOper",
+					data:{
+						'jx0404id':jx0404id,'cqqk':cqqk
+					},
+					async:false
+				}).responseText + ')');
+
+				if(rev.success){
+					alert("抽签成功！");
+					window.location.reload();
+				}else{
+					$("#div_"+jx0404id).show();
+					alert(rev.message);
+					window.location.reload();
+				}
+			}
+		</script>
+	</head> 
+	<body>
+		<br> 
+		<table class="display" border="0" cellpadding="0" cellspacing="0" style="width:99%" align="center">
+	  		<thead>
+	  			<tr>
+					
+						<th>课程编号</th>
+						<th>课程名称</th>
+						<th>项目名称</th>
+						<th>课序号</th>
+						<th width="30px">学分</th>
+						<th width="55px">课程属性</th>
+						<th>上课教师</th>
+						<th>上课时间</th>
+						<th>上课地点</th>
+						<th>上课校区</th>
+						
+						
+						<th width="55px">选修类型</th>
+						<th width="55px">选课状态</th>
+						<th width="55px">操作</th>
+					
+	  			</tr>
+	  		</thead>
+	  		<tbody>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd01931361</td>
+								
+									
+									
+										<td>信号与系统(双语)</td>
+									
+								
+								
+								<td align="center"></td>
+								<td align="center">3</td>
+								
+								<td align="center">3</td>
+								<td>必修</td>
+								
+								<td>贾春娟,孙媛媛</td>
+								<td>1-16周 星期二 5-6 <br>1-16单周 星期四 5-6 </td>
+								<td>兴隆山群楼C座3407d<br>兴隆山群楼C座3407d</td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_2021202222485">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;2021202222485&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd02910660</td>
+								
+									
+									
+										<td>体育(4)</td>
+									
+								
+								
+								<td align="center">网球</td>
+								<td align="center">553</td>
+								
+								<td align="center">1</td>
+								<td>必修</td>
+								
+								<td>刘强</td>
+								<td>1-16周 星期五 3-4 </td>
+								<td>兴隆山校区南网球场</td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_2021202227869">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;2021202227869&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd02810450</td>
+								
+									
+									
+										<td>毛泽东思想和中国特色社会主义理论体系概论</td>
+									
+								
+								
+								<td align="center"></td>
+								<td align="center">313</td>
+								
+								<td align="center">5</td>
+								<td>必修</td>
+								
+								<td>王彬,肖成俊</td>
+								<td>1-17周 星期一 7-8 <br>1-16周 星期二 1-2 </td>
+								<td>兴隆山群楼A座1202d<br>兴隆山群楼A座1202d</td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_20212022210490">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;20212022210490&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd09010100</td>
+								
+									
+									
+										<td>形势与政策(4)</td>
+									
+								
+								
+								<td align="center"></td>
+								<td align="center">356</td>
+								
+								<td align="center">0.5</td>
+								<td>必修</td>
+								
+								<td>&nbsp;</td>
+								<td>6,8,10,12周 星期四 7-8 </td>
+								<td>兴隆山群楼C座3210d</td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_20212022210312">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;20212022210312&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd01932500</td>
+								
+									
+									
+										<td>电磁场</td>
+									
+								
+								
+								<td align="center"></td>
+								<td align="center">7</td>
+								
+								<td align="center">4</td>
+								<td>必修</td>
+								
+								<td>仲慧</td>
+								<td>1-12周 星期五 5-6 <br>1-12周 星期一 5-6 </td>
+								<td>兴隆山群楼C座3103d<br>兴隆山群楼C座3103d</td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_2021202224547">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;2021202224547&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd01921200</td>
+								
+									
+									
+										<td>运筹学</td>
+									
+								
+								
+								<td align="center"></td>
+								<td align="center">3</td>
+								
+								<td align="center">2</td>
+								<td>必修</td>
+								
+								<td>陈健,王洪涛</td>
+								<td>1-16周 星期二 3-4 </td>
+								<td>兴隆山群楼A座1501d</td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_2021202222484">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;2021202222484&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd01932470</td>
+								
+									
+									
+										<td>入式系统与智能控制课程设计</td>
+									
+								
+								
+								<td align="center"></td>
+								<td align="center">0</td>
+								
+								<td align="center">1</td>
+								<td>必修</td>
+								
+								<td>刘世明,李谦</td>
+								<td>17周 星期日 1-1 </td>
+								<td>&nbsp;</td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_2021202222476">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;2021202222476&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd01931560</td>
+								
+									
+									
+										<td>电机学(1)</td>
+									
+								
+								
+								<td align="center"></td>
+								<td align="center">4</td>
+								
+								<td align="center">2</td>
+								<td>必修</td>
+								
+								<td>杨玉波</td>
+								<td>1-16周 星期四 3-4 <br>1-12单周 星期三 3-4 </td>
+								<td>兴隆山群楼C座3110d<br>兴隆山群楼B座2301d</td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_2021202224538">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;2021202224538&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd01932080</td>
+								
+									
+									
+										<td>嵌入式系统与智能控制</td>
+									
+								
+								
+								<td align="center"></td>
+								<td align="center">0</td>
+								
+								<td align="center">3</td>
+								<td>必修</td>
+								
+								<td>刘世明,邢鲁华,李谦,刘晨蕾</td>
+								<td>1-16周 星期一 1-2 <br>1-16周 星期一 3-3 </td>
+								<td><br></td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_2021202222486">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;2021202222486&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd03111920</td>
+								
+									
+									
+										<td>科技英语文献阅读与翻译</td>
+									
+								
+								
+								<td align="center"></td>
+								<td align="center">321</td>
+								
+								<td align="center">2</td>
+								<td>必修</td>
+								
+								<td>吴倩</td>
+								<td>1-16周 星期三 1-2 </td>
+								<td>兴隆山群楼C座3306d</td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_2021202223684">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;2021202223684&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			 
+	  				<tr>
+						
+							
+							
+								<td>sd07010020</td>
+								
+									
+									
+										<td>人工智能与机器人(创新)</td>
+									
+								
+								
+								<td align="center"></td>
+								<td align="center">600</td>
+								
+								<td align="center">2</td>
+								<td>任选</td>
+								
+								<td>李泉,李铭</td>
+								<td>1-17周 星期三 7-8</td>
+								<td>&nbsp;</td>
+								<td>兴隆山校区</td>
+								
+								
+								<td align="center">主修</td>
+								
+									
+										<td align="center">选中</td>
+									
+									
+									
+								
+								
+								<td align="center">
+									<div id="div_2021202225845">
+										
+										
+											<a style="color:blue;text-decoration:underline;" href="javascript:xstkOper(&#39;2021202225845&#39;);">退选</a>
+										
+										
+										
+										
+									</div>
+								</td>
+							
+						
+	  				</tr>
+	  			
+	  		</tbody>	
+	  	</table>	
+	
+</body></html>
