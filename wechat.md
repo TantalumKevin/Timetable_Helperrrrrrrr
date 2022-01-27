@@ -81,7 +81,7 @@ print(soup)
 ```
 
 用浏览器打开可以得到：
-![HTML测试]()
+![HTML测试](https://gitee.com/kevin_ud/timetable_helper/raw/master/wechat_test/pic/html.png)
 
 然后用```Python-BeautifulSoup```测试以下输出
 ```python
