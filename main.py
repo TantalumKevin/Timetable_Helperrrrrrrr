@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup
 import xlwt as xl
-import re
+import re,os
 
-soup = BeautifulSoup(open('D:\\Projects\\Programs\\Python\\timetable_helper\\source.html','r',encoding='utf-8'), features="lxml")
+path = os.getcwd()
+soup = BeautifulSoup(open(path + '\\source.html','r',encoding='utf-8'), features="lxml")
 text = soup.get_text().split('\n')[35:]
 lenth = len(text)
 courses = []
@@ -68,4 +69,4 @@ for i in range(len(time_fixed)):
         sheet.write(y,5,re.sub("[周]",'',t[0]).replace(',',' ').replace("单",' 单').replace("双",' 双'))#week-周,
         y += 1
 
-file.save('D:\\Projects\\Programs\\Python\\timetable_helper\\aim.xls')
+file.save(path + '\\aim.xls')
