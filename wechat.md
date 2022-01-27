@@ -33,3 +33,16 @@ pip install beautifulsoup4 lxml xlwt
 ![Timetable](https://gitee.com/kevin_ud/timetable_helper/raw/master/picture/timetable.jpg)
 
 ## Ⅳ主要代码思路
+### **流程图如下**
+![流程图](https://gitee.com/kevin_ud/timetable_helper/raw/master/picture/flow.drawio.png)
+
+## Ⅴ关键步骤代码解析
+### 1) 解析HTML
+在这里我们使用的是```Beautifulsoup```去解析HTML，同时注意标注出使用```lxml```解析器
+一个使用案例：
+```Python
+from bs4 import Beautifulsoup
+soup = Beautifulsoup("HTML",feature = "lxml")
+print(soup)
+```
+输出
