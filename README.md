@@ -1,40 +1,33 @@
 # Timetable_Helperrrrrrrr！
 
-#### 介绍
-强智教务系统+课程表app
-适配衔接
-输入：HTML/txt
-输出：excel
+## Ⅰ项目介绍
 
-#### Timetable
-https://www.jianshu.com/p/0c576ec144c5
+### 本项目的开发目的在于适配**Timetable App**与**山东大学~~智慧~~教学服务平台**，由于App官方提供的导入课表功能在学校新的教务系统面前显得……难以形容，故开发这个项目用以便捷导入课程。
 
+| 语言  | 引用库 | 用途说明 |
+| :---: | :---: | :---: |
+|Python | bs4(with lxml)<br>xlwt<br>re | HTML解析处理<br>xls解析处理<br>正则表达式 |
 
-#### 安装教程
+### **输入部分：**
+由选课阶段**手动导出**的HTML文件（目前仅支持手动导出，自动登录导出是下一代更新内容），如图：
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+![教务系统](https://gitee.com/kevin_ud/timetable_helper/raw/master/picture/source1.jpg)
+![教务系统](https://gitee.com/kevin_ud/timetable_helper/raw/master/picture/source2.jpg)
 
-#### 使用说明
+### **输出部分：**
+参考```Timetable```开发者发布的[博文](https://www.jianshu.com/p/0c576ec144c5)，根据情况我选择了第一种模板来构建输出
+![输出](https://upload-images.jianshu.io/upload_images/4679632-05afd34d030ef0b9.png)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+## Ⅱ使用前须知
+务必将安装引用库否则无法使用
+```cmd
+pip install beautifulsoup4 lxml xlwt
+```
 
-#### 参与贡献
+## Ⅲ使用效果
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+### 输出xls文件：
+![xls](https://gitee.com/kevin_ud/timetable_helper/raw/master/picture/result.png)
+### **教务系统课表查询**与**Timetable导入课程**效果对比
+![EA_System](https://gitee.com/kevin_ud/timetable_helper/raw/master/picture/system.png)
+![Timetable](https://gitee.com/kevin_ud/timetable_helper/raw/master/picture/timetable.jpg)
