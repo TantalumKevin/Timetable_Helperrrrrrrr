@@ -16,7 +16,7 @@
 
 ### **输出部分：**
 参考```Timetable```开发者发布的[博文](https://www.jianshu.com/p/0c576ec144c5)，根据情况我选择了第一种模板来构建输出
-![输出](https://upload-images.jianshu.io/upload_images/4679632-05afd34d030ef0b9.png)
+![输出](https://gitee.com/kevin_ud/timetable_helper/raw/master/picture/example.png)
 
 ## Ⅱ使用前须知
 务必将安装引用库否则无法使用
