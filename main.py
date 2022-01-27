@@ -61,11 +61,11 @@ for i in range(len(time_fixed)):
         #t = [week,day,time]
         #print(j)
         sheet.write(y,0,name[i])#name
-        sheet.write(y,1,teacher[i])#teacher
+        sheet.write(y,1,teacher[i].replace(',',' '))#teacher
         sheet.write(y,2,t[1].replace('星期',''))#day-星期
         sheet.write(y,3,t[2])#time
         sheet.write(y,4,re.sub("[兴隆山群楼校区南座]|[A-Z]",'',r))#room-兴隆山
-        sheet.write(y,5,re.sub("[周]",'',t[0]).replace(',',' '))#week-周,
+        sheet.write(y,5,re.sub("[周]",'',t[0]).replace(',',' ').replace("单",' 单').replace("双",' 双'))#week-周,
         y += 1
 
 file.save('D:\\Projects\\Programs\\Python\\timetable_helper\\aim.xls')
