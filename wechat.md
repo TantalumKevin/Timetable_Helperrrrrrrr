@@ -116,3 +116,38 @@ print(soup.text)
 7>Edited by Kevin
 ```
 我们看到网页标题、和所有网页内容都被我们得到了，而且非常有规律，那我们就可以进行下一步……数据处理！
+
+### 2) 文本切片
+这里就是非常简单的python文字处理了，字符串分割、列表切片，然后笔者根据实际需求将数据整理成了多重列表，当然这些步骤也是有着优化空间的.
+```python
+text = soup.text
+text = text.split("\n")
+#以换行符“\n”作分割，将字符串分割成字符串列表
+#后面可以根据需求将列表切片提取，如：
+course1 = text[:19]
+#表示提取出text的前19个元素（注意python中计数是从0开始的，也就是说包含第0个元素但不包含第19个元素）
+```
+
+### 3) xls文件操作
+由于```Timetable App```适配的导入文件格式是```.xls```文件，所以笔者选用```xlwt```库来操作```xls```文件
+```python
+import xlwt
+file = xl.Workbook("UTF-8")
+#新建表格，并注明编码格式
+sheet = file.add_sheet("sheet1")
+#新建表单
+sheet.write(Row, Col,'Text')
+#数据写入
+file.save(path)
+#文件保存
+```
+这里笔者还利用了正则表达式和```replace```函数进行数据处理，将数据整理成模板规定的样式，如：
+```python
+text = re.sub("[周]",'',t[0]).replace(',',' ').replace("单",' 单').replace("双",' 双'))
+#去掉所有的“周”字，所有的逗号替换为空格，在“单”或“双”字前添加空格
+```
+关于正则表达式，请参看[菜鸟教程](https://www.runoob.com/regexp/regexp-tutorial.html)
+
+### 至此，笔者将html文件中的所有信息提取转换成了```Timetable App```需要的文件内容和格式，这只是笔者迈出的第一步，后续会进一步调整输入，以适配不同的情况（如选课时忘记导出html而错过）
+## Ⅵ代码获取
+### 点击左下角<u>**阅读原文**</u>获取喔
